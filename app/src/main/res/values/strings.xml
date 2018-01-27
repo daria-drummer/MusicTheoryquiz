@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Music Theory quiz</string>
+    <string name="major">Major</string>
+    <string name="natural_minor">Natural Minor</string>
+    <string name="harmonic_minor">Harmonic Minor</string>
+    <string name="melodic_minor">Melodic Minor</string>
+</resources>

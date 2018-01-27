@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.musictheoryquiz.MainActivity"
+    android:background="@drawable/notes_background"
+    android:orientation="vertical"
+    >
+
+    <ImageView
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/melodic_minor2"/>
+
+    <ImageButton
+        android:id="@+id/sound_q4"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sound"
+        android:background="@android:color/transparent"
+        android:layout_gravity="center_horizontal"
+        android:onClick="playTheScale4"/>
+
+    <RadioGroup
+        android:id="@+id/q4"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <RadioButton
+            style="@style/RadioButtonText"
+            android:id="@+id/q4_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/major"
+            android:onClick="checkAndGoToTheQuestion5"/>
+
+        <RadioButton
+            style="@style/RadioButtonText"
+            android:id="@+id/q4_2"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/natural_minor"
+            android:onClick="checkAndGoToTheQuestion5"/>
+
+        <RadioButton
+            style="@style/RadioButtonText"
+            android:id="@+id/q4_3"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/harmonic_minor"
+            android:onClick="checkAndGoToTheQuestion5"/>
+
+        <RadioButton
+            style="@style/RadioButtonText"
+            android:id="@+id/q4_4"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/melodic_minor"
+            android:onClick="checkAndGoToTheQuestion5"/>
+
+    </RadioGroup>
+
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_marginTop="90dp"
+        style="?android:progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="80"
+        />
+
+
+</LinearLayout>
