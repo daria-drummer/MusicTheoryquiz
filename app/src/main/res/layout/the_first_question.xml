@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/major"
-            android:onClick="checkAndGoToTheQuestion2"/>
+            android:onClick="checkAndGoToTheQuestion2" />
 
         <RadioButton
             style="@style/RadioButtonText"

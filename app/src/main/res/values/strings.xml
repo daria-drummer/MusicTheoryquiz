@@ -4,4 +4,13 @@
     <string name="natural_minor">Natural Minor</string>
     <string name="harmonic_minor">Harmonic Minor</string>
     <string name="melodic_minor">Melodic Minor</string>
+    <string name="Message_result1">Have you ever heard about the music scales? That\'s what music harmony is based on!</string>
+    <string name="Message_result2">You need to study more!</string>
+    <string name="Message_result3">Not bad, but I know you can better!</string>
+    <string name="Message_result4">Almost perfect!</string>
+    <string name="Message_result5">Congratulations! You\'ve answered correctly to all the questions!</string>
+    <string name="music_theory_quiz">Music Theory quiz</string>
+    <string name="scale_identification">Scale identification</string>
+    <string name="begin_button"> B e g i N </string>
+    <string name="try_again">  Try again  </string>
 </resources>
