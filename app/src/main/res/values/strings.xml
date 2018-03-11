@@ -13,4 +13,13 @@
     <string name="scale_identification">Scale identification</string>
     <string name="begin_button"> B e g i N </string>
     <string name="try_again">  Try again  </string>
+    <string name="chords_question">What chords make up famous ii-V-I progression in the key of G?</string>
+    <string name="f">F#</string>
+    <string name="am">Am</string>
+    <string name="cm">Cm</string>
+    <string name="g">G</string>
+    <string name="d7">D7</string>
+    <string name="note_question">What note is missing in the following minor pentatonic scale?</string>
+    <string name="note_question2">C - Eb - F - _ - Bb - C</string>
+    <string name="note_question_hint">type your answer here</string>
 </resources>

@@ -14,6 +14,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
@@ -25,6 +26,8 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
 
     int scores = 0;
+
+
 
 
     @Override
@@ -52,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
         boolean q1_choice1 = ((RadioButton) question1Choice1).isChecked();
         if (q1_choice1) {
             scores += 1;
-            Log.v("MainActivity", "score1 " + scores);
         }
+        Log.v("MainActivity", "score1 " + scores);
         setContentView(R.layout.the_second_question);
     }
 
@@ -62,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
         boolean q2_choice4 = ((RadioButton) question2Choice4).isChecked();
         if (q2_choice4) {
             scores += 1;
-            Log.v("MainActivity", "score2 " + scores);
         }
+        Log.v("MainActivity", "score2 " + scores);
         setContentView(R.layout.the_third_question);
     }
 
@@ -72,8 +75,8 @@ public class MainActivity extends AppCompatActivity {
         boolean q3_choice3 = ((RadioButton) question3Choice3).isChecked();
         if (q3_choice3) {
             scores += 1;
-            Log.v("MainActivity", "score3 " + scores);
         }
+        Log.v("MainActivity", "score3 " + scores);
         setContentView(R.layout.the_fourth_question);
     }
 
@@ -82,18 +85,52 @@ public class MainActivity extends AppCompatActivity {
         boolean q4_choice4 = ((RadioButton) question4Choice4).isChecked();
         if (q4_choice4) {
             scores += 1;
-            Log.v("MainActivity", "score4 " + scores);
         }
+        Log.v("MainActivity", "score4 " + scores);
         setContentView(R.layout.the_fifth_question);
     }
 
-    public void checkAndGoToTheResults (View view) {
+    public void checkAndGoToTheQuestion6 (View view) {
         RadioButton question5Choice3 = (RadioButton) findViewById(R.id.q5_3);
         boolean q5_choice3 = ((RadioButton) question5Choice3).isChecked();
         if (q5_choice3) {
             scores += 1;
-            Log.v("MainActivity", "score4 " + scores);
         }
+        Log.v("MainActivity", "score5 " + scores);
+        setContentView(R.layout.the_sixth_question);
+    }
+
+    public void checkAndGoToTheQuestion7 (View view) {
+        CheckBox fCheckBox = (CheckBox) findViewById(R.id.checkboxF);
+        boolean answeredF = ((CheckBox) fCheckBox).isChecked();
+        CheckBox amCheckBox = (CheckBox) findViewById(R.id.checkboxAm);
+        boolean answeredAM = ((CheckBox) amCheckBox).isChecked();
+        CheckBox cmCheckBox = (CheckBox) findViewById(R.id.checkboxCm);
+        boolean answeredCM = ((CheckBox) cmCheckBox).isChecked();
+        CheckBox gCheckBox = (CheckBox) findViewById(R.id.checkboxG);
+        boolean answeredG = ((CheckBox) gCheckBox).isChecked();
+        CheckBox d7CheckBox = (CheckBox) findViewById(R.id.checkboxD7);
+        boolean answeredD7 = ((CheckBox) d7CheckBox).isChecked();
+        if (answeredAM) {
+            if (answeredG) {
+                if (answeredD7) {
+                    scores += 1;
+                    Log.v("MainActivity", "score6.1 " + scores);
+                }
+            }
+        }
+        Log.v("MainActivity", "score6.2 " + scores);
+        setContentView(R.layout.the_seventh_question);
+    }
+
+    public void checkAndGoToTheResults (View view) {
+        EditText answerQuestion7Field = (EditText) findViewById(R.id.answerQuest7);
+        String answerQuestion7 = answerQuestion7Field.getText().toString();
+        if (answerQuestion7.contentEquals("G")) {
+            scores += 1;
+            Log.v("MainActivity", "score7.1 " + scores);
+        }
+        Log.v("MainActivity", "score7.2 " + scores);
         setContentView(R.layout.results);
         displayResult(scores);
         displayMessage(scores);
@@ -106,23 +143,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void displayResult (int scores) {
         TextView scoresTextView = (TextView) findViewById(R.id.scores);
-        scoresTextView.setText("" + scores + "/5");
+        scoresTextView.setText("" + scores + "/7");
     }
 
     public void displayMessage (int scores){
         TextView resultMessageTextView = (TextView) findViewById(R.id.text_results);
-        if (scores<=1) {
+        if (scores<=2) {
             resultMessageTextView.setText(R.string.Message_result1);
-        } else if  (scores==2) {
+        } else if  (scores==3) {
             resultMessageTextView.setText(R.string.Message_result2);
         }
-        else if  (scores==3) {
+        else if  (scores<=5) {
             resultMessageTextView.setText(R.string.Message_result3);
         }
-        else if  (scores==4) {
+        else if  (scores==6) {
             resultMessageTextView.setText(R.string.Message_result4);
         }
-        else if (scores==5) {
+        else if (scores==7) {
             resultMessageTextView.setText(R.string.Message_result5);
         }
     }

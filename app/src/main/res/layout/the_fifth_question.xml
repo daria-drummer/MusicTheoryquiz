@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/major"
-            android:onClick="checkAndGoToTheResults"/>
+            android:onClick="checkAndGoToTheQuestion6"/>
 
         <RadioButton
             style="@style/RadioButtonText"
@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/natural_minor"
-            android:onClick="checkAndGoToTheResults"/>
+            android:onClick="checkAndGoToTheQuestion6"/>
 
         <RadioButton
             style="@style/RadioButtonText"
@@ -56,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/harmonic_minor"
-            android:onClick="checkAndGoToTheResults"/>
+            android:onClick="checkAndGoToTheQuestion6"/>
 
         <RadioButton
             style="@style/RadioButtonText"
@@ -65,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/melodic_minor"
-            android:onClick="checkAndGoToTheResults"/>
+            android:onClick="checkAndGoToTheQuestion6"/>
 
     </RadioGroup>
 
@@ -76,8 +76,8 @@
         style="?android:progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="100"
-        android:progress="100"
+        android:max="70"
+        android:progress="50"
         />
 
 
