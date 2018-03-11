@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.musictheoryquiz.MainActivity"
+    android:background="@drawable/notes_background"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:fontFamily="@font/dancing_script"
+        android:gravity="center"
+        android:paddingTop="60dp"
+        android:text="@string/chords_question"
+        android:textColor="@android:color/black"
+        android:textSize="30sp" />
+
+    <CheckBox
+        style="@style/CheckBoxText"
+        android:id="@+id/checkboxF"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/f" />
+
+    <CheckBox
+        style="@style/CheckBoxText"
+        android:id="@+id/checkboxAm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/am" />
+
+    <CheckBox
+        style="@style/CheckBoxText"
+        android:id="@+id/checkboxCm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cm" />
+
+    <CheckBox
+        style="@style/CheckBoxText"
+        android:id="@+id/checkboxG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/g" />
+
+    <CheckBox
+        style="@style/CheckBoxText"
+        android:id="@+id/checkboxD7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/d7" />
+
+    <ImageView
+        android:src="@drawable/arrow"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="checkAndGoToTheQuestion7"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_marginTop="30dp"
+        style="?android:progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="70"
+        android:progress="60"
+        />
+
+
+</LinearLayout>

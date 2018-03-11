@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.musictheoryquiz.MainActivity"
+    android:background="@drawable/notes_background"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:paddingTop="60dp"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/note_question"
+        android:fontFamily="@font/dancing_script"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:paddingTop="20dp"
+        android:layout_gravity="center" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/note_question2"
+        android:fontFamily="@font/dancing_script"
+        android:textSize="30sp"
+        android:textColor="@android:color/black"/>
+    
+    <EditText
+        android:id="@+id/answerQuest7"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/note_question_hint"
+        android:fontFamily="@font/dancing_script"
+        android:textSize="30sp"
+        android:inputType="textCapWords"/>
+
+    <ImageView
+        android:src="@drawable/arrow"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="checkAndGoToTheResults"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_marginTop="100dp"
+        style="?android:progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="70"
+        android:progress="70"
+        />
+
+</LinearLayout>
