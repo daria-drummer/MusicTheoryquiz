@@ -1,51 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context="com.example.android.musictheoryquiz.MainActivity"
-android:background="@drawable/vintage_sheet_music1"
-android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/vintage_sheet_music1"
+    android:orientation="vertical"
+    tools:context="com.example.android.musictheoryquiz.MainActivity">
 
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="7dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:fontFamily="@font/dancing_script"
-        android:textSize="50sp"
-        android:textColor="@android:color/black"
         android:text="@string/music_theory_quiz"
-        />
+        android:textColor="@android:color/black"
+        android:textSize="50sp" />
 
     <TextView
-        android:textColor="@android:color/black"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:fontFamily="@font/dancing_script"
+        android:text="@string/scale_identification"
+        android:textColor="@android:color/black"
         android:textSize="38sp"
-        android:textStyle="bold"
-        android:text="@string/scale_identification"/>
+        android:textStyle="bold" />
 
 
     <Button
-        android:layout_marginTop="370dp"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" b e g i n "
-        android:fontFamily="@font/dancing_script"
-        android:textSize="45sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="370dp"
         android:background="@drawable/transparent_with_border"
-        android:onClick="beginTheQuiz"/>
-
-
-
-
-
+        android:fontFamily="@font/dancing_script"
+        android:onClick="beginTheQuiz"
+        android:text="@string/b_e_g_i_n"
+        android:textSize="45sp" />
 
 
 </LinearLayout>

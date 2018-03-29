@@ -22,4 +22,8 @@
     <string name="note_question">What note is missing in the following minor pentatonic scale?</string>
     <string name="note_question2">C - Eb - F - _ - Bb - C</string>
     <string name="note_question_hint">type your answer here</string>
+    <string name="b_e_g_i_n">b e g i n</string>
+    <string name="Toast_result_Awesome">Awesome!</string>
+    <string name="Toast_result_Not_Bad">Not bad!</string>
+    <string name="Toast_result_Looser">Looser!</string>
 </resources>

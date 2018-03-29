@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.musictheoryquiz.MainActivity"
     android:background="@drawable/vintage_paper"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.example.android.musictheoryquiz.MainActivity">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:src="@drawable/notes3"/>
+        android:src="@drawable/notes3" />
 
     <TextView
         android:id="@+id/scores"
-        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5/5"
-        android:fontFamily="@font/dancing_script"
-        android:textSize="50sp"
-        android:textColor="@android:color/black"
         android:layout_gravity="center"
-        />
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/dancing_script"
+        android:text="7/7"
+        android:textColor="@android:color/black"
+        android:textSize="50sp" />
 
     <TextView
         android:id="@+id/text_results"
@@ -39,19 +37,19 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" try again "
         android:layout_gravity="center"
-        android:fontFamily="@font/dancing_script"
-        android:textSize="20sp"
         android:background="@drawable/transparent_with_border"
-        android:onClick="tryAgain"/>
+        android:fontFamily="@font/dancing_script"
+        android:onClick="tryAgain"
+        android:text=" try again "
+        android:textSize="20sp" />
 
     <ImageView
-        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-        android:src="@drawable/notes1"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/notes1" />
 
 
 </LinearLayout>

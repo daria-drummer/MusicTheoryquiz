@@ -4,60 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.musictheoryquiz.MainActivity"
     android:background="@drawable/notes_background"
     android:orientation="vertical"
-    >
+    tools:context="com.example.android.musictheoryquiz.MainActivity">
 
     <TextView
-        android:paddingTop="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/note_question"
         android:fontFamily="@font/dancing_script"
-        android:textSize="30sp"
-        android:textColor="@android:color/black"/>
+        android:gravity="center"
+        android:paddingTop="60dp"
+        android:text="@string/note_question"
+        android:textColor="@android:color/black"
+        android:textSize="30sp" />
 
     <TextView
-        android:paddingTop="20dp"
-        android:layout_gravity="center" 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/note_question2"
+        android:layout_gravity="center"
         android:fontFamily="@font/dancing_script"
-        android:textSize="30sp"
-        android:textColor="@android:color/black"/>
-    
+        android:paddingTop="20dp"
+        android:text="@string/note_question2"
+        android:textColor="@android:color/black"
+        android:textSize="30sp" />
+
     <EditText
         android:id="@+id/answerQuest7"
-        android:layout_marginTop="30dp"
-        android:gravity="center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/note_question_hint"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/dancing_script"
-        android:textSize="30sp"
-        android:inputType="textCapWords"/>
+        android:gravity="center"
+        android:hint="@string/note_question_hint"
+        android:inputType="textCapWords"
+        android:textSize="30sp" />
 
     <ImageView
-        android:src="@drawable/arrow"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:onClick="checkAndGoToTheResults"/>
+        android:onClick="checkAndGoToTheResults"
+        android:src="@drawable/arrow" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
-        android:layout_marginTop="100dp"
         style="?android:progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:max="70"
-        android:progress="70"
-        />
+        android:progress="70" />
 
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.example.android.musictheoryquiz;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.Image;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
@@ -9,33 +10,33 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Layout;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    int scores = 0;
-
-
-
+    int scores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
 
     /**
      * the methods called when the Button "Begin" pressed
@@ -44,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
     public void beginTheQuiz (View view) {
         setContentView(R.layout.the_first_question);
     }
-
 
     /**
      * the methods called when you press the Radio Buttons.
@@ -102,22 +102,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void checkAndGoToTheQuestion7 (View view) {
         CheckBox fCheckBox = (CheckBox) findViewById(R.id.checkboxF);
-        boolean answeredF = ((CheckBox) fCheckBox).isChecked();
         CheckBox amCheckBox = (CheckBox) findViewById(R.id.checkboxAm);
-        boolean answeredAM = ((CheckBox) amCheckBox).isChecked();
         CheckBox cmCheckBox = (CheckBox) findViewById(R.id.checkboxCm);
-        boolean answeredCM = ((CheckBox) cmCheckBox).isChecked();
         CheckBox gCheckBox = (CheckBox) findViewById(R.id.checkboxG);
-        boolean answeredG = ((CheckBox) gCheckBox).isChecked();
         CheckBox d7CheckBox = (CheckBox) findViewById(R.id.checkboxD7);
-        boolean answeredD7 = ((CheckBox) d7CheckBox).isChecked();
-        if (answeredAM) {
-            if (answeredG) {
-                if (answeredD7) {
-                    scores += 1;
-                    Log.v("MainActivity", "score6.1 " + scores);
-                }
-            }
+        if (!fCheckBox.isChecked() && amCheckBox.isChecked() && !cmCheckBox.isChecked() && gCheckBox.isChecked() && d7CheckBox.isChecked()) {
+            scores += 1;
+            Log.v("MainActivity", "score6.1 " + scores);
         }
         Log.v("MainActivity", "score6.2 " + scores);
         setContentView(R.layout.the_seventh_question);
@@ -125,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void checkAndGoToTheResults (View view) {
         EditText answerQuestion7Field = (EditText) findViewById(R.id.answerQuest7);
-        String answerQuestion7 = answerQuestion7Field.getText().toString();
+        String answerQuestion7 = answerQuestion7Field.getText().toString().trim();
         if (answerQuestion7.contentEquals("G")) {
             scores += 1;
             Log.v("MainActivity", "score7.1 " + scores);
@@ -134,8 +125,32 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.results);
         displayResult(scores);
         displayMessage(scores);
-    }
 
+        //Text for the Toast.
+        TextView toastResultTextView = (TextView) findViewById(R.id.text_toast);
+        ImageView toastResultImageView = (ImageView) findViewById(R.id.ic_result);
+        if (scores >= 6) {
+            toastResultTextView.setText(R.string.Toast_result_Awesome);
+            toastResultImageView.setImageResource(R.drawable.yeah);
+        } else if (scores >= 4) {
+            toastResultTextView.setText(R.string.Toast_result_Not_Bad);
+            toastResultImageView.setImageResource(R.drawable.ok);
+        } else if (scores >= 0) {
+            toastResultTextView.setText(R.string.Toast_result_Looser);
+            toastResultImageView.setImageResource(R.drawable.looser);
+        }
+
+        //Toast showing the quiz results.
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast,
+                (ViewGroup) findViewById(R.id.custom_toast_container));
+
+        Toast toast = new Toast(getApplicationContext());
+        toast.setGravity(Gravity.BOTTOM, 0, 0);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(layout);
+        toast.show();
+    }
 
     /**
      * The methods for displaying the results of the quiz.
@@ -173,18 +188,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
-
-
     /**
      * the methods called when you press the sounds buttons.
      */
 
-
-
     public void playTheScale1 (View view){
         final MediaPlayer scale1 = MediaPlayer.create(this, R.raw.b_flat_major_piano_scale1);
-        MotionEvent event;
+//        MotionEvent event;
         ImageButton playTheScale_1Button = (ImageButton) findViewById(R.id.sound_q1);
         playTheScale_1Button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
@@ -192,9 +202,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     public void playTheScale2 (View view){
         final MediaPlayer scale2 = MediaPlayer.create(this, R.raw.f_sharp_minor_melodic_piano_scale2);
-        MotionEvent event;
+//        MotionEvent event;
         ImageButton playTheScale_2Button = (ImageButton) findViewById(R.id.sound_q2);
         playTheScale_2Button.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
@@ -205,7 +216,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void playTheScale3 (View view){
         final MediaPlayer scale3 = MediaPlayer.create(this, R.raw.e_minor_harmonic_piano_scale3);
-        MotionEvent event;
+//        MotionEvent event;
         ImageButton playTheScale_3Button = (ImageButton) findViewById(R.id.sound_q3);
         playTheScale_3Button.setOnClickListener(new View.OnClickListener(){
                 public void onClick(View v) {
@@ -216,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void playTheScale4 (View view){
         final MediaPlayer scale4 = MediaPlayer.create(this, R.raw.g_minor_melodic_piano_scale4);
-        MotionEvent event;
+//        MotionEvent event;
         ImageButton playTheScale_4Button = (ImageButton) findViewById(R.id.sound_q4);
         playTheScale_4Button.setOnClickListener(new View.OnClickListener(){
                 public void onClick(View v) {
@@ -227,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void playTheScale5 (View view){
         final MediaPlayer scale5 = MediaPlayer.create(this, R.raw.d_minor_harmonic_piano_scale5);
-        MotionEvent event;
+//        MotionEvent event;
         ImageButton playTheScale_5Button = (ImageButton) findViewById(R.id.sound_q5);
         playTheScale_5Button.setOnClickListener(new View.OnClickListener(){
                 public void onClick(View v) {
@@ -235,7 +246,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
     }
-
 }
 
 

@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.musictheoryquiz.MainActivity"
     android:background="@drawable/notes_background"
     android:orientation="vertical"
-    >
+    tools:context="com.example.android.musictheoryquiz.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,57 +20,56 @@
         android:textSize="30sp" />
 
     <CheckBox
-        style="@style/CheckBoxText"
         android:id="@+id/checkboxF"
-        android:layout_marginTop="30dp"
+        style="@style/CheckBoxText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:text="@string/f" />
 
     <CheckBox
-        style="@style/CheckBoxText"
         android:id="@+id/checkboxAm"
+        style="@style/CheckBoxText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/am" />
 
     <CheckBox
-        style="@style/CheckBoxText"
         android:id="@+id/checkboxCm"
+        style="@style/CheckBoxText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cm" />
 
     <CheckBox
-        style="@style/CheckBoxText"
         android:id="@+id/checkboxG"
+        style="@style/CheckBoxText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/g" />
 
     <CheckBox
-        style="@style/CheckBoxText"
         android:id="@+id/checkboxD7"
+        style="@style/CheckBoxText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/d7" />
 
     <ImageView
-        android:src="@drawable/arrow"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:onClick="checkAndGoToTheQuestion7"/>
+        android:onClick="checkAndGoToTheQuestion7"
+        android:src="@drawable/arrow" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
-        android:layout_marginTop="30dp"
         style="?android:progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:max="70"
-        android:progress="60"
-        />
+        android:progress="60" />
 
 
 </LinearLayout>
